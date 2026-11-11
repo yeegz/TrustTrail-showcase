@@ -4,7 +4,7 @@
 
 **Lay out the evidence before you pay a stranger online.**
 
-Try it: **https://trusttrail-yeegz.web.app** (open "a fictional case" to see everything without adding anything real)
+Try it: **https://trusttrail-yeegz.web.app** (press "See an example first" to explore without adding anything real)
 
 You found a secondhand phone. The seller wants a deposit, asks to move to WhatsApp, and the bank account is in someone else's name. Each thing alone might be fine. TrustTrail puts the listing, the chat and the payment request side by side and shows:
 
@@ -66,7 +66,7 @@ Built to be usable by anyone: large touch targets, plain words, numbers first, d
 | Injected instructions that changed a result | 0 of 130 |
 | Disguised links flagged / real hosts wrongly flagged | 17 of 17 / 0 of 15 |
 | Requests to other servers in a full session | 0 |
-| New case with a screenshot, click to result | 4.5 s |
+| New check with a screenshot, click to result | about 5 s |
 
 Stack: TypeScript, React, Vite, IndexedDB, Tesseract compiled to WebAssembly (self-hosted), strict Content-Security-Policy. No backend.
 

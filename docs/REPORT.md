@@ -24,7 +24,7 @@ All of this was run on 11 Nov 2026 against the live site with real headless Chro
 |-------|--------|
 | Automated tests | 1,393 passing across 10 files (`npm test`) |
 | Type check + production build | Clean (`npm run build`) |
-| Fresh case with a real image through OCR | Result shown 4.5 s after pressing "Read and analyse" (includes first download of the OCR engine) |
+| Fresh case with a real image through OCR | Result shown about 5 s after pressing "Check this deal" (includes first download of the OCR engine) |
 | Requests to any other server during a full session | 0 |
 | Console or page errors, 4 device profiles | 0 |
 | Sideways scrolling at 390, 820, 1440 wide (and 320 by hand) | None |
