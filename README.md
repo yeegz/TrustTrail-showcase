@@ -47,6 +47,16 @@ After you add screenshots, TrustTrail asks about the payment, the seller and how
 |---|---|
 | <img src="screens/intake-questions.png" alt="Interview question"> | <img src="screens/own-case-updates.png" alt="Updates diary"> |
 
+### It reads each screenshot and says why
+
+Every screenshot gets its own panel: what was found in it, the exact words, how that trick usually works, and what to do. A seller profile that is four days old, unverified, with reviews that all arrived this week and tell you to "transfer without hesitating" is caught from the picture alone. Write what happened next in your own words ("I paid", "now he wants a shipping fee") and the page answers.
+
+| Found in this screenshot | An update, understood |
+|---|---|
+| <img src="screens/profile-evidence.png" alt="A seller profile screenshot with numbered warning signs and explanations"> | <img src="screens/update-reaction.png" alt="A written update answered with what to do now"> |
+
+Picture checks stay honest: TrustTrail reads the AI label that many image tools write into a file, and never claims to tell a real photo from a fake one by looking at it.
+
 ## How it works
 
 ```
@@ -72,7 +82,7 @@ Built to be usable by anyone: large touch targets, plain words, numbers first, d
 
 | | |
 |---|---|
-| Automated tests | 1,424 passing |
+| Automated tests | 1,497 passing |
 | Fictional rule fixtures | 840 (English, Malay, mixed Manglish) |
 | Findings quoting their source word for word | 537 of 537 |
 | Injected instructions that changed a result | 0 of 130 |
