@@ -9,11 +9,13 @@ A private tool for one moment: you are about to pay someone you met online for a
 | Area | Delivered |
 |------|-----------|
 | Analysis engine | 14 versioned rules from the research + 1 for checks the user runs; contradiction finder (price, payee, account, storage, model, location); copied-review clustering; link spelling inspector; six-outcome ordered aggregation; evidence graph; timeline |
-| Reading screenshots | On-device OCR (English + Malay), one row per chat message, word-level boxes, editable text with history |
+| Reading screenshots | On-device OCR in 25 languages (the right ones picked from your device and country), one row per chat message, word-level boxes, editable text with history |
+| Interview | Up to 11 questions, one at a time, about the payment, the seller and how the deal went. Answers become findings marked "From your answers" and a "Looks normal" list |
+| Updates | A dated diary per deal (I paid, the item arrived, the seller went quiet, notes); "I paid" brings up the first steps for your country |
 | App | A full landing page (how it works, what you get, privacy, questions), 3-step new check, case workbench (Overview, Evidence, Findings in three views, Checks, Report), Settings, a step-by-step guide in every case |
 | AI (optional) | "AI suggestions": says what is going on in plain words, then 2 to 4 next steps tailored to the deal, each with a ready-to-send message in the seller's language, and up to three extra lines worth a look. On-device where the browser has a built-in model; otherwise Google's free Gemini, only after an explicit yes each time, with numbers blocked out. The AI never decides the result |
 | Privacy | No server, no account, no analytics. Images re-encoded on arrival. Third-party numbers hidden in reports by default. Cases delete themselves after 30 days; hard delete with a receipt |
-| Languages | 25 interface languages (English reviewed, 24 machine-drafted previews), right-to-left support. Analysis in English and Malay |
+| Languages | 25 interface languages (English reviewed, 24 machine-drafted previews), right-to-left support. Numbers, names, links, the interview and AI suggestions work in every language; word-by-word warning rules exist for English and Malay |
 | Platform | Installable, works offline, light and dark, phone to desktop |
 
 There is **no backend**, on purpose: everything runs in the browser, so there is nothing server-side to operate, secure or pay for. The reasoning is in `DECISIONS.md`.
@@ -23,7 +25,7 @@ All of this was run on 11 Nov 2026 against the live site with real headless Chro
 
 | Check | Result |
 |-------|--------|
-| Automated tests | 1,412 passing across 11 files (`npm test`) |
+| Automated tests | 1,424 passing across 12 files (`npm test`) |
 | Type check + production build | Clean (`npm run build`) |
 | Fresh case with a real image through OCR | Result shown about 5 s after pressing "Check this deal" (includes first download of the OCR engine) |
 | Requests to any other server during a full session (without pressing "Ask Google Gemini") | 0 |
@@ -45,6 +47,9 @@ Screenshots of every screen at each size are in `docs/screens/`.
 - Official check routes are verified for Malaysia and Singapore only.
 - OCR accuracy on real phone screenshots has not been measured.
 - No independent security review. Accessibility has passed an automated audit only; no screen-reader testing with real users yet.
+
+## Fixed after the owner's live test (11 Nov)
+An outside review of a real test run found three problems, all fixed and covered by tests: a buyer's own offer to pay first was reported as the seller asking for it; a finding claimed reviews "came from the seller" without evidence; and results did not separate risk from proof. The overview now shows warning signs, what looks normal and what is not confirmed as three separate groups.
 
 ## Known rough edges (from the test pass)
 - A negotiated discount shows up as "the price changed" (labelled "Worth checking", with "a price you agreed together" as the innocent reading).

@@ -39,6 +39,14 @@ Everything runs in your browser. No account, no server, no analytics. Screenshot
 
 <p align="center"><img src="screens/ai-suggestions.png" width="70%" alt="AI suggestions: a plain summary and three next steps with messages in Malay"></p>
 
+## A short interview, one question at a time
+
+After you add screenshots, TrustTrail asks about the payment, the seller and how the deal went. Answers sharpen the result, and they settle things a screenshot cannot, such as who suggested paying first.
+
+| One question at a time | Updates as things happen |
+|---|---|
+| <img src="screens/intake-questions.png" alt="Interview question"> | <img src="screens/own-case-updates.png" alt="Updates diary"> |
+
 ## How it works
 
 ```
@@ -64,7 +72,7 @@ Built to be usable by anyone: large touch targets, plain words, numbers first, d
 
 | | |
 |---|---|
-| Automated tests | 1,412 passing |
+| Automated tests | 1,424 passing |
 | Fictional rule fixtures | 840 (English, Malay, mixed Manglish) |
 | Findings quoting their source word for word | 537 of 537 |
 | Injected instructions that changed a result | 0 of 130 |
@@ -83,7 +91,7 @@ Stack: TypeScript, React, Vite, IndexedDB, Tesseract compiled to WebAssembly (se
 ## Honest status
 
 - The rules are tested only on **fictional examples written by the same person who wrote the rules**. That shows the engine does what was intended; it does not show how accurate it is on real conversations.
-- Analysis works for **English and Malay** only, both labelled beta. Other languages are stored and shown, not analysed.
+- Screenshots are read in **25 languages**, and numbers, names, links, the interview and AI suggestions work in all of them. The word-by-word warning rules exist for **English and Malay** only, both labelled beta.
 - Only the English text has been reviewed by a person. The other 24 languages are machine-drafted previews and say so in Settings.
 - Official check routes are verified for **Malaysia and Singapore** only.
 - No user study has been run yet and no independent security review. Accessibility passes an automated audit (0 violations on every screen); a screen-reader pass with real users is still to do.
