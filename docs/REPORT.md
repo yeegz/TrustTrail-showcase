@@ -10,7 +10,7 @@ A private tool for one moment: you are about to pay someone you met online for a
 |------|-----------|
 | Analysis engine | 14 versioned rules from the research + 1 for checks the user runs; contradiction finder (price, payee, account, storage, model, location); copied-review clustering; link spelling inspector; six-outcome ordered aggregation; evidence graph; timeline |
 | Reading screenshots | On-device OCR (English + Malay), one row per chat message, word-level boxes, editable text with history |
-| App | Home, 3-step new case, case workbench (Overview, Evidence, Findings in three views, Checks, Report), Settings, a step-by-step guide in every case |
+| App | A full landing page (how it works, what you get, privacy, questions), 3-step new check, case workbench (Overview, Evidence, Findings in three views, Checks, Report), Settings, a step-by-step guide in every case |
 | AI (optional) | "AI suggestions": says what is going on in plain words, then 2 to 4 next steps tailored to the deal, each with a ready-to-send message in the seller's language, and up to three extra lines worth a look. On-device where the browser has a built-in model; otherwise Google's free Gemini, only after an explicit yes each time, with numbers blocked out. The AI never decides the result |
 | Privacy | No server, no account, no analytics. Images re-encoded on arrival. Third-party numbers hidden in reports by default. Cases delete themselves after 30 days; hard delete with a receipt |
 | Languages | 25 interface languages (English reviewed, 24 machine-drafted previews), right-to-left support. Analysis in English and Malay |
