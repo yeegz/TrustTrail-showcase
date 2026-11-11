@@ -76,7 +76,7 @@ Stack: TypeScript, React, Vite, IndexedDB, Tesseract compiled to WebAssembly (se
 - Analysis works for **English and Malay** only, both labelled beta. Other languages are stored and shown, not analysed.
 - Only the English text has been reviewed by a person. The other 24 languages are machine-drafted previews and say so in Settings.
 - Official check routes are verified for **Malaysia and Singapore** only.
-- No user study has been run yet, and there has been no independent security or accessibility audit.
+- No user study has been run yet and no independent security review. Accessibility passes an automated audit (0 violations on every screen); a screen-reader pass with real users is still to do.
 
 More: [build report](docs/REPORT.md) · [decisions](docs/DECISIONS.md) · [threat model](docs/THREAT_MODEL.md) · [benchmark](docs/BENCHMARK.md)
 

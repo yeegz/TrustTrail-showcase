@@ -29,6 +29,7 @@ All of this was run on 11 Nov 2026 against the live site with real headless Chro
 | Console or page errors, 4 device profiles | 0 |
 | Sideways scrolling at 390, 820, 1440 wide (and 320 by hand) | None |
 | Offline worker registered | Yes |
+| Automated accessibility audit (axe-core, WCAG 2.2 AA, 11 screens, light + dark) | 0 violations (118 found and fixed) |
 | Prompt-injection text in evidence changing the result | 0 of 130 attempts |
 | Disguised links flagged / real marketplace and bank hosts wrongly flagged | 17 of 17 / 0 of 15 |
 | Findings that quote their source word-for-word | 537 of 537 |
@@ -41,7 +42,7 @@ Screenshots of every screen at each size are in `docs/screens/`.
 - No real users have tried it. Whether it helps people decide better than a checklist is still a hypothesis.
 - Official check routes are verified for Malaysia and Singapore only.
 - OCR accuracy on real phone screenshots has not been measured.
-- No independent security or accessibility audit.
+- No independent security review. Accessibility has passed an automated audit only; no screen-reader testing with real users yet.
 
 ## Known rough edges (from the test pass)
 - A negotiated discount shows up as "the price changed" (labelled "Worth checking", with "a price you agreed together" as the innocent reading).
