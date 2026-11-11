@@ -82,7 +82,7 @@ Built to be usable by anyone: large touch targets, plain words, numbers first, d
 
 | | |
 |---|---|
-| Automated tests | 1,505 passing |
+| Automated tests | 1,768 passing |
 | Fictional rule fixtures | 840 (English, Malay, mixed Manglish) |
 | Findings quoting their source word for word | 537 of 537 |
 | Injected instructions that changed a result | 0 of 130 |
