@@ -11,6 +11,7 @@ A private tool for one moment: you are about to pay someone you met online for a
 | Analysis engine | 14 versioned rules from the research + 1 for checks the user runs; contradiction finder (price, payee, account, storage, model, location); copied-review clustering; link spelling inspector; six-outcome ordered aggregation; evidence graph; timeline |
 | Reading screenshots | On-device OCR (English + Malay), one row per chat message, word-level boxes, editable text with history |
 | App | Home, 3-step new case, case workbench (Overview, Evidence, Findings in three views, Checks, Report), Settings, a step-by-step guide in every case |
+| AI (optional) | "AI suggestions": says what is going on in plain words, then 2 to 4 next steps tailored to the deal, each with a ready-to-send message in the seller's language, and up to three extra lines worth a look. On-device where the browser has a built-in model; otherwise Google's free Gemini, only after an explicit yes each time, with numbers blocked out. The AI never decides the result |
 | Privacy | No server, no account, no analytics. Images re-encoded on arrival. Third-party numbers hidden in reports by default. Cases delete themselves after 30 days; hard delete with a receipt |
 | Languages | 25 interface languages (English reviewed, 24 machine-drafted previews), right-to-left support. Analysis in English and Malay |
 | Platform | Installable, works offline, light and dark, phone to desktop |
@@ -22,10 +23,11 @@ All of this was run on 11 Nov 2026 against the live site with real headless Chro
 
 | Check | Result |
 |-------|--------|
-| Automated tests | 1,393 passing across 10 files (`npm test`) |
+| Automated tests | 1,412 passing across 11 files (`npm test`) |
 | Type check + production build | Clean (`npm run build`) |
 | Fresh case with a real image through OCR | Result shown about 5 s after pressing "Check this deal" (includes first download of the OCR engine) |
-| Requests to any other server during a full session | 0 |
+| Requests to any other server during a full session (without pressing "Ask Google Gemini") | 0 |
+| Free Gemini path on the live site, real Chrome (`node scripts/ai-check.mjs <url>`) | 0 requests before consent; 1 request after; phone and account numbers absent from what was sent; a summary and 3 tailored next steps returned, with messages written in the seller's language (Malay) |
 | Console or page errors, 4 device profiles | 0 |
 | Sideways scrolling at 390, 820, 1440 wide (and 320 by hand) | None |
 | Offline worker registered | Yes |
@@ -49,6 +51,9 @@ Screenshots of every screen at each size are in `docs/screens/`.
 - Any unfamiliar link on the same line as a payment word counts as a payment link, which is a serious sign.
 - Three identical default reviews ("Item received. Thanks.") count as copied reviews.
 - A 10-digit bank account starting with 01 is read as a Malaysian mobile number.
+
+## Cost
+Nothing here can produce a bill: Firebase Hosting is on the free plan and the Google Cloud project has **no billing account attached** (checked with `gcloud billing projects describe trusttrail-yeegz`). The Gemini key is the free tier on that same project; if the allowance runs out, the button reports it and the rest keeps working.
 
 ## Where things are
 - Live: https://trusttrail-yeegz.web.app (Firebase Hosting, free plan, project `trusttrail-yeegz`)

@@ -16,7 +16,9 @@ It never calls a person a scammer, and it never calls a purchase safe. It shows 
 
 ## Private by construction
 
-Everything runs in your browser. No account, no server, no analytics. Screenshots are read on your device. A full session makes **zero requests** to any other server (measured, not promised), and the site keeps working offline.
+Everything runs in your browser. No account, no server, no analytics. Screenshots are read on your device, and fixed rules decide the result. A full session makes **zero requests** to any other server (measured, not promised) unless you choose to ask for an AI explanation, and the site keeps working offline.
+
+**Optional AI, both free.** "AI suggestions" says what is going on in plain language, then gives next steps tailored to the deal, each with a message you can copy and send, written in the language the seller uses. Where the browser has a built-in model it runs on your device. Otherwise you can ask Google's free Gemini: it asks first, every time, and blocks out phone, account, email and ID numbers before sending. The AI never decides the result, and anything it quotes is checked word for word against your evidence.
 
 ## A look around
 
@@ -35,6 +37,8 @@ Everything runs in your browser. No account, no server, no analytics. Screenshot
 <img src="screens/phone-light-7-checks.png" width="23%" alt="Phone: checks">
 </p>
 
+<p align="center"><img src="screens/ai-suggestions.png" width="70%" alt="AI suggestions: a plain summary and three next steps with messages in Malay"></p>
+
 ## How it works
 
 ```
@@ -42,7 +46,7 @@ screenshots or pasted text
   → checked, size-capped and re-encoded on arrival
   → read on the device (English and Malay), one row per message
   → you correct anything it misread
-  → 14 fixed, versioned rules read the original words (no AI model, no score)
+  → 14 fixed, versioned rules read the original words and decide the result (no score)
   → contradictions, copied reviews and odd link spellings are picked out
   → one of six plain results, none of which is "safe"
   → what to do next, and what is still unchecked
@@ -52,7 +56,7 @@ Every finding must quote its source word for word. If you fix a misread line, th
 
 ## Design
 
-One idea carried everywhere: a claim is only as good as the words it rests on, so the words are struck with a highlighter and numbered, and the same number sits on the screenshot. Warning weight is shown with a plain icon and a word ("Serious", "Worth checking", "Good to know"), never with a red stamp or a green tick. A guide bar walks you through one real step at a time, named from your own case ("Check 012-555 0142 with Semak Mule").
+One idea carried everywhere: a claim is only as good as the words it rests on, so the words are struck with a highlighter and numbered, and the same number sits on the screenshot. Warning weight is shown with a plain icon and a word ("Serious", "Worth checking", "Good to know"), never with a verdict stamp. Green is the working colour, red is kept for deleting things, and dark mode is its own design: green-tinted near-black, lit from above, with highlighter marks that stay bright. A guide bar walks you through one real step at a time, named from your own case ("Check 012-555 0142 with Semak Mule").
 
 Built to be usable by anyone: large touch targets, plain words, numbers first, detail tucked behind "More detail", 25 interface languages including right-to-left, light and dark, phone to desktop.
 
@@ -60,7 +64,7 @@ Built to be usable by anyone: large touch targets, plain words, numbers first, d
 
 | | |
 |---|---|
-| Automated tests | 1,393 passing |
+| Automated tests | 1,412 passing |
 | Fictional rule fixtures | 840 (English, Malay, mixed Manglish) |
 | Findings quoting their source word for word | 537 of 537 |
 | Injected instructions that changed a result | 0 of 130 |
@@ -68,7 +72,7 @@ Built to be usable by anyone: large touch targets, plain words, numbers first, d
 | Requests to other servers in a full session | 0 |
 | New check with a screenshot, click to result | about 5 s |
 
-Stack: TypeScript, React, Vite, IndexedDB, Tesseract compiled to WebAssembly (self-hosted), strict Content-Security-Policy. No backend.
+Stack: TypeScript, React, Vite, IndexedDB, Tesseract compiled to WebAssembly (self-hosted), Chrome's on-device Prompt API, Gemini free tier (opt-in), strict Content-Security-Policy. No backend, and nothing that can produce a bill.
 
 ## Honest status
 
